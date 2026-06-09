@@ -1,0 +1,8 @@
+[font]
+normal = { family = "JetBrains Mono" , style = "Regular" }
+bold = { family = "JetBrains Mono" , style = "Bold" }
+italic = { family = "JetBrains Mono" , style = "Italic" }
+size = 12.0
+
+[general]
+import = [ "/global/gtsna_northeast5/wtonks/toolchain/config/alacritty/themes/tokyo-night.toml" ]
