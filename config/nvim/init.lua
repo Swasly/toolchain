@@ -18,6 +18,12 @@ vim.opt.shiftwidth = 4
 -- set clipboard to system clipboard (hooray!!!)
 vim.opt.clipboard = "unnamedplus"
 
+-- Force neovim to recognize backspace/ctrl+h as TmuxNavigateLeft
+-- This is needed so that C-H works inside vim-tmux-navigator
+-- It means that BS outside of edit mode will invoke :TmuxNavigateLeft
+vim.keymap.set('n', '<BS>', ':TmuxNavigateLeft<CR>', { silent = true})
+vim.keymap.set('n', '<C-h>', ':TmuxNavigateLeft<CR>', { silent = true})
+
 -- shortcut for ":source %" (source the current buffer)
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>", { desc = "nvim source the current buffer" })
 
