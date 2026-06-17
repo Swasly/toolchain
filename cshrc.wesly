@@ -24,3 +24,5 @@ stty erase "^?"
 set purple = `echo "\033[38;2;187;154;247m"`
 set reset  = `echo "\033[0m"`
 set prompt = "%{${purple}%}%n@%m %#%{${reset}%} "
+
+alias zcui zCui
