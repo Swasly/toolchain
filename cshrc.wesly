@@ -1,0 +1,26 @@
+# Has a dependency on ${WORK} being defined in ~/.cshrc or ~/.cshrc.wesly
+
+setenv TOOLCHAIN ${WORK}/toolchain
+
+# for rustup, cargo, rustc, fd, ripgrep
+setenv PATH ${TOOLCHAIN}/tools/rust/cargo/bin:${PATH}
+setenv CARGO_HOME ${TOOLCHAIN}/tools/rust/cargo
+setenv RUSTUP_HOME ${TOOLCHAIN}/tools/rust/rustup
+
+# for neovim
+setenv PATH ${TOOLCHAIN}/tools/neovim/bin:${PATH}
+alias vim nvim
+
+# for tmux
+setenv PATH ${TOOLCHAIN}/tools:${PATH}
+
+# config for tmux, alacritty, neovim
+setenv XDG_CONFIG_HOME ${TOOLCHAIN}/config
+
+# for alacritty to send compatible backspace for tmux, nvim, vim-tmux-navigator
+stty erase "^?"
+
+#set prompt = '%n@%m %#'
+set purple = `echo "\033[38;2;187;154;247m"`
+set reset  = `echo "\033[0m"`
+set prompt = "%{${purple}%}%n@%m %#%{${reset}%} "
