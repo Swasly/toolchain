@@ -79,6 +79,7 @@ return {
         { desc = "telescope search p4 veloce areas" })
 
       require "config.telescope.multigrep".setup()
+      require "config.telescope.zebugrep".setup()
     end,
   },
 }
