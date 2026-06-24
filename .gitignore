@@ -2,3 +2,6 @@ lazy-lock.json
 tools
 ibus
 config/tmux/plugins
+config/Cursor/
+config/Eve/
+config/mimeapps.list
