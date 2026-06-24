@@ -27,6 +27,7 @@ local zebu_find = function(opts)
       --- These are the zebu things to NOT search
       --- Need to expand this list as I work with designs which are too large to search
       --- Example: table.insert(args, "--glob=!README*")
+      table.insert(args, "--glob=!backend_default")
 
       if pieces[2] then
         table.insert(args, "-g")
@@ -52,7 +53,8 @@ local zebu_find = function(opts)
 end
 
 M.setup = function()
-  vim.keymap.set("n", "<space>fz", zebu_find, { desc = "telescope zebu grep" })
+  vim.keymap.set("n", "<space>fzf", zebu_find, { desc = "telescope zebu grep" })
+  vim.keymap.set("n", "<space>fzl", function() require('telescope.builtin').find_files {search_dirs = {"zcui.work/zCui/log"}} end, {desc = "telescope search zebu logs"})
 end
 
 return M
