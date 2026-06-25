@@ -54,7 +54,7 @@ end
 
 M.setup = function()
   vim.keymap.set("n", "<space>fzf", zebu_find, { desc = "telescope zebu grep" })
-  vim.keymap.set("n", "<space>fzl", function() require('telescope.builtin').find_files {search_dirs = {"zcui.work/zCui/log"}} end, {desc = "telescope search zebu logs"})
+  vim.keymap.set("n", "<space>fzl", function() require('telescope.builtin').find_files {search_dirs = {"zcui.work/zCui/log", "zcui.work/zCui/backup/latest"}} end, {desc = "telescope search zebu logs"})
 end
 
 return M
