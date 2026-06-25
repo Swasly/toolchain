@@ -4,7 +4,7 @@
 require("config.lazy")
 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- enable nerd font (if terminal has it installed)
 -- TODO: nerd font is not working :(
@@ -69,6 +69,7 @@ vim.keymap.set("n", "<space>st", function()
   { desc = "open small terminal" })
 
 -- shortcut to send commands to an opened terminal
+-- currently only sends an echo, needs to be configured/extended.
 vim.keymap.set("n", "<space>term", function()
   vim.fn.chansend(term_job_id, "echo hello\n")
 end)
