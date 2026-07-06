@@ -31,10 +31,16 @@ vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>", { desc = "nvim sourc
 vim.keymap.set("n", "<space>x", ":.lua<CR>", { desc = "nvim source line" })
 vim.keymap.set("v", "<space>x", ":lua<CR>", { desc = "nvim source selected line(s)" })
 
+-- shortuct for ":n" (go to next file)
+vim.keymap.set("n", "<space>n", ":n<CR>", { desc = "go to next file" })
+
 -- shortcuts to move up and down in the qf list
 -- (populate qf list w/ <C-q> in telescope results)
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+
+-- rebind default ctrl-\ + ctrl-n to exit terminal mode
+--vim.keymap.set("t", "<C-Esc>", [[<C-\><C-\>]], { noremap = true, desc = 'Exit terminal mode' })
 
 -- Highlight when yanking text
 -- See ':help vim.highlight.on_yank()'
